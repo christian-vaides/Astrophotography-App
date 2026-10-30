@@ -7,7 +7,6 @@ class DataManager:
     def __init__(self, cache_file="tle_cache.txt", fallback_file="offline_fallback_tles.txt"):
         self.cache_file = cache_file
         self.fallback_file = fallback_file
-        # Fixed live URL endpoint from CelesTrak (Task 1)
         self.tle_url = "https://celestrak.org"
 
     def fetch_live_tles(self) -> bool:
@@ -27,7 +26,7 @@ class DataManager:
         Loads raw data lines from cache or fallback, and filters them 
         to only keep large, bright, highly trackable objects.
         """
-        # Task 1: Check cache age and fetch updates automatically
+        #Check cache age and fetch updates automatically
         cache_exists = os.path.exists(self.cache_file)
         cache_expired = cache_exists and (time.time() - os.path.getmtime(self.cache_file) > 86400)
         
@@ -39,13 +38,13 @@ class DataManager:
             with open(self.cache_file, "r") as f:
                 raw_lines = f.readlines()
 
-        # Task 1 Offline Fallback: If cache is empty or missing, read local asset
+        # Offline Fallback: If cache is empty or missing, read local asset
         if not raw_lines and os.path.exists(self.fallback_file):
             with open(self.fallback_file, "r") as f:
                 raw_lines = f.readlines()
 
         # =========================================================================
-        # TASK 2 IMPLEMENTATION: Satellite Filtering
+        # IMPLEMENTATION: Satellite Filtering
         # Loops through the TLE data triplets and strips out faint space debris.
         # Keeps Starlink, OneWeb, ISS, Tiangong, and bright science satellites (HST).
         # =========================================================================
@@ -73,7 +72,7 @@ class DataManager:
         return filtered_lines
 
     # =========================================================================
-    # TASK 3 IMPLEMENTATION: Data Age Status Indicator
+    # IMPLEMENTATION: Data Age Status Indicator
     # Returns a user-friendly timestamp showing how old your satellite data is.
     # =========================================================================
     def get_data_age_string(self) -> str:
