@@ -28,5 +28,5 @@ To make sure your team doesn't overwrite each other's code while working, follow
 3. The Gold Rule: Never change the names of the functions or the types of inputs they take. As long as compute_shutter_safety still takes (lat, lon, az, alt, fov, tles) and returns a dictionary, Developer 2 can rewrite the entire inner math engine without Developer 3's UI breaking at all.
 
 thread: https://share.google/aimode/tZjt4cP7RtKOxtSbF
-
+git clone https://github.com/christian-vaides/Astrophotography-App.git
 
