@@ -177,8 +177,8 @@ def live_panel():
     c2.metric("Altitude", f"{data['altitude_deg']}°")
     c3.metric("Frames", f"{calc['frames_done']} / {data['frames_total']}")
     c4.metric("Integration", f"{calc['integration_min']:.1f} min")
-    st.caption(f"Moon phase: {data['moon_phase']}  | Auto-refresh every {REFRESH_SECONDS}s | 
-               f"Last update {now:%H:%M:%S}")
+    st.caption(f"Moon phase: {data['moon_phase']} | Auto-refresh every {REFRESH_SECONDS}s | Last update {now:%H:%M:%S}")
+
 
 
 live_panel()
