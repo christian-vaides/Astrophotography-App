@@ -1,0 +1,32 @@
+
+ Developer 1: The Data Expert (data_manager.py)
+
+Your Core Mission: Make data loading instantaneous and robust so the app works flawlessly out in the field without cellular service.
+• Task 1: Add Offline Fallbacks. Right now, if there is no internet, the app crashes if the cache is missing. Modify load_tles to check for a backup local text file shipped with the app.
+• Task 2: Implement Satellite Filtering. The active satellite list from CelesTrak contains thousands of entries, many of which are tiny, dead space debris that won't ruin a photo. Filter the text data to only keep highly reflective, operational groups (like starlink, oneweb, and bright science satellites like the ISS).
+• Task 3: Status Indicator. Add a small function that returns the timestamp of when the TLE data was last refreshed so Developer 3 can show it on the UI dashboard (e.g., "Data age: 4 hours old").
+
+🧮 Developer 2: The Physics & History Expert (physics_engine.py)
+
+Your Core Mission: Upgrade the math from a simple coordinate box to high-precision aerospace geometry.
+• Task 1: True Angular Separation. Right now, the bounding box uses simple subtraction (az - half_fov). This breaks down when pointing close to the zenith (straight up). Replace this with a true spherical angular separation formula (or use Skyfield's built-in vector dot-product functions).
+• Task 2: Dynamic Intersection Tracking. Instead of just returning a single warning flag, calculate the exact entry time, path trajectory vector, and exit time of the satellite crossing the camera frame.
+• Task 3: Expand the Historical Catalog. Grow the historical_events list. You can load a larger dataset of 100+ deep-sky objects or fetch historical supernova locations by parsing an external JSON file.
+
+🎨 Developer 3: The UI & Integration Expert (app.py)
+
+Your Core Mission: Turn the raw text variables from Dev 1 and Dev 2 into a professional, dark-themed astrophotography command dashboard.
+• Task 1: Night-Mode Theme Styling. Astrophotographers work in pitch darkness and hate bright white screens. Use Streamlit’s configuration rules to force a deep red or true black "night-vision" theme.
+• Task 2: Real-Time Audio or Visual Alerts. Create an audible alert (using basic web audio elements) or a flashing indicator that changes color dynamically when the countdown timer hits 10 seconds.
+• Task 3: Automatic Auto-Refresh. Right now, the user has to manually adjust an entry to recalculate. Implement an automation loop using st.fragment or a simple timer mechanism to force the calculation loop to refresh itself every 2 seconds without requiring manual input.
+
+🤝 The Parallel Workflow Blueprint
+
+To make sure your team doesn't overwrite each other's code while working, follow this team routine:
+1. Commit the Baseline: Everyone starts with the exact code templates provided in the previous step.
+2. Work Separately: Dev 1 only opens and edits data_manager.py. Dev 2 only opens physics_engine.py. Dev 3 only opens app.py.
+3. The Gold Rule: Never change the names of the functions or the types of inputs they take. As long as compute_shutter_safety still takes (lat, lon, az, alt, fov, tles) and returns a dictionary, Developer 2 can rewrite the entire inner math engine without Developer 3's UI breaking at all.
+
+thread: https://share.google/aimode/tZjt4cP7RtKOxtSbF
+
+
