@@ -6,11 +6,14 @@ readme = "README.md"
 authors = [
     { name = "Chris", email = "christian.vaidesgiron@gmail.com" }
 ]
-requires-python = ">=3.15"
-dependencies = []
+requires-python = ">=3.11"
+dependencies = [
+    "requests>=2.34.2",
+    "sgp4>=2.27",
+    "skyfield>=1.55",
+    "streamlit>=1.66.1",
+]
 
-[project.scripts]
-pj = "pj:main"
 
 [build-system]
 requires = ["uv_build>=0.13.6,<0.14.0"]
