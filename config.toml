@@ -1,0 +1,7 @@
+[theme]
+base = "dark"
+primaryColor = "#c40000"             # buttons, sliders, toggles
+backgroundColor = "#000000"          # true black main background 
+secondaryBackgroundColor = "#00FFFF" # sidebar / cards (very light cyan)
+textColor = "#720000".                 # dim red keeps night-adapted eyes happy
+font = "sans_serif".
