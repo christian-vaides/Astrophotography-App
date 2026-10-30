@@ -26,3 +26,7 @@ To make sure your team doesn't overwrite each other's code while working, follow
 1. Commit the Baseline: Everyone starts with the exact code templates provided in the previous step.
 2. Work Separately: Dev 1 only opens and edits data_manager.py. Dev 2 only opens physics_engine.py. Dev 3 only opens app.py.
 3. The Gold Rule: Never change the names of the functions or the types of inputs they take. As long as compute_shutter_safety still takes (lat, lon, az, alt, fov, tles) and returns a dictionary, Developer 2 can rewrite the entire inner math engine without Developer 3's UI breaking at all.
+
+thread: https://share.google/aimode/tZjt4cP7RtKOxtSbF
+
+
