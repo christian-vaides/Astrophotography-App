@@ -168,8 +168,9 @@ def run():
     # Target pointing coordinates.
     # target_azimuth = float(input("Target azimuth (degrees): "))
     # target_elevation = float(input("Target altitude/elevation (degrees): "))
-    target_azimuth = 180
-    target_elevation = 45
+    # pointing to andromeda galaxy
+    target_azimuth = 120
+    target_elevation = -1
 
     # Full angular diameter of the FOV.
     # field_of_view = float(input("Field of view (degrees): "))
@@ -198,7 +199,6 @@ def run():
         all_satellites
     )
 
-    # NOTE: potentially move this function into another file
     # Determine which satellites are inside the FOV.
     results = check_satellites(
         leo_satellites,
